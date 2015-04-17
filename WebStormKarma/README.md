@@ -1,0 +1,1 @@
+![alt tag](js_WebStorm_Karma.png)
