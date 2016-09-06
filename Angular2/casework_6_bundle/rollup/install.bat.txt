@@ -1,0 +1,16 @@
+
+
+
+
+No name was provided for external module '@angular/platform-browser' in options.globals - guessing '_angular_platformBrowser'
+
+rollup -c rollup.config.vendor.js && tsc --out ./dist/vendor.js --target es5 --allowJs dist/vendor.es2015.js
+
+
+"clean": "rm -rf dist",
+"rollup": "rollup -c rollup.config.js && tsc --out ./dist/rollup.bundle.js --target es5 --allowJs dist/rollup.bundle.es2015.js",
+"rollup_vendor": "rollup -c rollup.config.vendor.js && tsc --out ./dist/vendor.js --target es5 --allowJs dist/vendor.es2015.js",
+"minify": "uglifyjs dist/rollup.bundle.js --screw-ie8 --compress --mangle --output dist/rollup.bundle.min.js",
+"minify_vendor": "uglifyjs dist/vendor.js --screw-ie8 --compress --mangle --output dist/vendor.min.js",
+"build": "npm run clean && npm run rollup && npm run rollup_vendor",
+"build_prod": "npm run build  && npm run minify && npm run minify minify_vendor" 
