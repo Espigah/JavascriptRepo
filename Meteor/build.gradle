@@ -1,0 +1,73 @@
+def projectName;
+
+task setup << {
+  entryName();
+}
+
+def entryName(){
+	  def console = System.console()
+    if (console) {
+        projectName = console.readLine('> Please enter your project name: ')      
+    } else {
+        logger.error "Cannot get console."
+    }
+}
+
+
+
+task stopTomcat(type:Exec) {
+  workingDir './'
+
+  //on windows:
+ // commandLine 'cmd', '/c', 'stop.bat'
+
+  //on linux
+  commandLine 'meteor'
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+}
+
+
+:\{Fabricio}\__subversion\_git\JavascriptRepo\Meteor>gradle setup
+Picked up _JAVA_OPTIONS: -Xmx640M
+> Building 0% > :setup> Please enter your project name: te
+:setup FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file 'D:\{Fabricio}\__subversion\_git\JavascriptRepo\Meteor\build.gradle' line: 10
+
+* What went wrong:
+Execution failed for task ':setup'.
+> No such property: projectName for class: org.gradle.api.internal.project.DefaultProject_Decorated
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 8.68 secs
+
+D:\{Fabricio}\__subversion\_git\JavascriptRepo\Meteor>gradle sT
+Picked up _JAVA_OPTIONS: -Xmx640M
+:stopTomcat FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':stopTomcat'.
+> A problem occurred starting process 'command 'meteor''
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 2.074 secs
