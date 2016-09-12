@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "start": "node server"
+  },
+  "jspm": {
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-beta.17",
+      "es6-shim": "github:es-shims/es6-shim@^0.35.1",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
+      "ts": "github:frankwallis/plugin-typescript@^5.0.19",
+      "zone.js": "npm:zone.js@^0.6.17"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "chokidar-socket-emitter": "^0.5.4",
+    "es6-promise": "^3.2.1",
+    "es6-shim": "^0.35.1",
+    "http-server": "^0.9.0",
+    "open": "0.0.5",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.6",
+    "systemjs": "^0.19.37",
+    "zone.js": "^0.6.17",
+     "typescript": "^2.0.2",
+  }
+}
